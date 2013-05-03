@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#C3CFD9">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#E6F3FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1"/>
+	<subDataset name="Table Dataset 2"/>
+	<subDataset name="Table Dataset 3"/>
+	<parameter name="test" class="java.lang.String"/>
+	<parameter name="Company_Name" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from trade_master a,trade_detail b,Ac_master c where a.bill_no=b.bill_no and a.trash=0 and a.Ac_id=c.Ac_id and a.bill_no=$P{test}]]>
+	</queryString>
+	<field name="TR_ID" class="java.math.BigDecimal"/>
+	<field name="BILL_NO" class="java.math.BigDecimal"/>
+	<field name="BOOK_NAME" class="java.lang.String"/>
+	<field name="AC_ID" class="java.math.BigDecimal"/>
+	<field name="BILL_DATE" class="java.sql.Timestamp"/>
+	<field name="PARTY_BILL_DATE" class="java.sql.Timestamp"/>
+	<field name="PARTY_BILL_NO" class="java.math.BigDecimal"/>
+	<field name="TOTAL_QTY" class="java.math.BigDecimal"/>
+	<field name="DISCOUNT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_GROSS" class="java.math.BigDecimal"/>
+	<field name="TOTAL_TAX" class="java.math.BigDecimal"/>
+	<field name="TOTAL_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="BILL_REMARK" class="java.lang.String"/>
+	<field name="DUE_DAYS" class="java.math.BigDecimal"/>
+	<field name="BILL_MODE" class="java.lang.String"/>
+	<field name="TRASH" class="java.math.BigDecimal"/>
+	<field name="ITEM_ID" class="java.math.BigDecimal"/>
+	<field name="QTY" class="java.math.BigDecimal"/>
+	<field name="RATE" class="java.math.BigDecimal"/>
+	<field name="G_TOTAL" class="java.math.BigDecimal"/>
+	<field name="T_TAX" class="java.math.BigDecimal"/>
+	<field name="TOTAL" class="java.math.BigDecimal"/>
+	<field name="AC_NAME" class="java.lang.String"/>
+	<field name="HEAD_ID" class="java.math.BigDecimal"/>
+	<field name="OP_BAL" class="java.math.BigDecimal"/>
+	<field name="BAL_TYPE" class="java.lang.String"/>
+	<field name="REF_PERSON" class="java.lang.String"/>
+	<field name="C_ADDRESS" class="java.lang.String"/>
+	<field name="PINCODE" class="java.math.BigDecimal"/>
+	<field name="R_ADDRESS" class="java.lang.String"/>
+	<field name="C_NAME" class="java.lang.String"/>
+	<field name="S_NAME" class="java.lang.String"/>
+	<field name="CI_NAME" class="java.lang.String"/>
+	<field name="JOIN_DATE" class="java.sql.Timestamp"/>
+	<field name="CONTACT_NO" class="java.math.BigDecimal"/>
+	<field name="PHONE_NO" class="java.math.BigDecimal"/>
+	<field name="EMAIL_ID" class="java.lang.String"/>
+	<field name="LIMIT" class="java.math.BigDecimal"/>
+	<variable name="TOTAL_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL}]]></variableExpression>
+	</variable>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="1" width="555" height="800"/>
+				<imageExpression><![CDATA["D:\\TYBCA\\ACERPSYSTEM\\web\\images\\Reports background.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="219" splitType="Stretch">
+			<textField>
+				<reportElement x="337" y="93" width="201" height="35"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BOOK_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="96" width="134" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Pay Little And Get More]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="131" width="46" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Bill To:-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="131" width="139" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AC_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="152" width="137" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{R_ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="172" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PINCODE}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="195" width="137" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CONTACT_NO}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="173" width="37" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CI_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="375" y="131" width="63" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Bill Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="446" y="131" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BILL_DATE}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="375" y="153" width="63" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Bill No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="446" y="153" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BILL_NO}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="373" y="192" width="84" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Customer Id]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="474" y="192" width="68" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{AC_ID}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="13" y="48" width="525" height="45" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="32" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Company_Name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="113" y="6" width="87" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ITEM_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="6" width="45" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="199" y="6" width="52" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[RATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="6" width="73" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[G_TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="6" width="56" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[T_TAX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="6" width="56" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<elementGroup/>
+			<textField>
+				<reportElement x="110" y="9" width="88" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ITEM_ID}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="9" width="46" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{QTY}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="9" width="49" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RATE}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="9" width="71" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{G_TOTAL}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="9" width="56" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{T_TAX}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="9" width="56" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTAL}.toString()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="23" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="415" y="10" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="504" y="10" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="202" splitType="Stretch">
+			<textField>
+				<reportElement x="421" y="80" width="87" height="26"/>
+				<textElement textAlignment="Right">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTAL_AMOUNT}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="421" y="51" width="88" height="25"/>
+				<textElement textAlignment="Right">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DISCOUNT}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="54" y="153" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[    Signeture]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="176" width="179" height="20"/>
+				<textElement/>
+				<text><![CDATA[THANK YOU FOR YOUR BUSINESS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="369" y="10" width="54" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTAL_TAX}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="299" y="11" width="66" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTAL_GROSS}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="252" y="10" width="44" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTAL_QTY}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="350" y="80" width="71" height="25"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Total Bill]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="423" y="11" width="55" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TOTAL_1}.toString()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="-1" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="3" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="39" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="350" y="51" width="71" height="24"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

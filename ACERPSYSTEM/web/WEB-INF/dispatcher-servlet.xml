@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+    
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                 <!-- Outer pages Keys -->
+                <prop key="index.htm">indexCtr</prop>
+                <prop key="Gallery.htm">GalleryCtr</prop>
+                <prop key="BlogDisplay.htm">BlogDisplayCtr</prop>
+                <prop key="Payment.htm">PaymentCtr</prop>
+                <prop key="Login.htm">LoginCtr</prop>
+                <prop key="Register.htm">RegisterCtr</prop>
+                <prop key="Contect.htm">ContectCtr</prop>
+                <prop key="AboutUsOut.htm">AboutUsOutCtr</prop>
+                <prop key="Logout.htm">LogoutCtr</prop>
+
+                 <!-- Super Admin pages Keys -->
+                <prop key="Admin_Dashboard.htm">Admin_DashboardCtr</prop>
+                <prop key="Structure.htm">StructureCtr</prop>
+                <prop key="Request.htm">RequestCtr</prop>
+                <prop key="Blog.htm">BlogCtr</prop>
+                <prop key="Block.htm">BlockCtr</prop>
+                <prop key="Help_Response.htm">Help_ResponseCtr</prop>
+                <prop key="All_Company_Info.htm">All_Company_InfoCtr</prop>
+                <prop key="Send_Mail.htm">Send_MailCtr</prop>
+         
+
+                <!-- Outer pages Keys -->
+
+
+                <prop key="All_Msg.htm">All_MsgCtr</prop>
+                <prop key="Ajex.htm">AjexCtr</prop>
+
+                <!-- Admin & Client pages Keys -->
+                <prop key="Dashboard.htm">DashboardCtr</prop>
+                <prop key="Account.htm">AccountCtr</prop>
+                <prop key="Item.htm">ItemCtr</prop>
+                <prop key="Trade.htm">TradeCtr</prop>
+                <prop key="Report.htm">ReportCtr</prop>
+                <prop key="Bank.htm">BankCtr</prop>
+                <prop key="Cash.htm">CashCtr</prop>
+                <prop key="S_JvEntry.htm">S_JvEntryCtr</prop>
+                <prop key="Currency.htm">CurrencyCtr</prop>
+                <prop key="User.htm">UserCtr</prop>
+                <prop key="Trash.htm">TrashCtr</prop>
+                <prop key="User_Detail.htm">User_DetailCtr</prop>
+                <prop key="Company_Detail.htm">Company_DetailCtr</prop>
+                <prop key="Setting.htm">SettingCtr</prop>
+                <prop key="Help.htm">HelpCtr</prop>
+                <prop key="Chang_Password.htm">Chang_PasswordCtr</prop>
+
+            </props>
+        </property>
+    </bean>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="5000000" />
+        <property name="maxInMemorySize" value="5000000" />
+    </bean>
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+    
+    <bean id="paramResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="paramName">
+            <value>action</value>
+        </property>
+    </bean>
+    
+   
+<!-- ******************************************************************************************************************* -->
+    <!--
+    The Index controller.
+    -->
+    <bean name="indexCtr" class="Controller.index.indexController" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    The Gallery controller.
+    -->
+    <bean name="GalleryCtr" class="Controller.Gallery.GalleryController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    The Blog Display controller.
+    -->
+    <bean name="BlogDisplayCtr" class="Controller.BlogDisplay.BlogDisplayController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    The Payment controller.
+    -->
+    <bean name="PaymentCtr" class="Controller.Payment.PaymentController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Login module
+    -->
+    <bean name="LoginCtr" class="Controller.Login.LoginController" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+    
+    <!--
+    The Register controller.
+    -->
+    <bean name="RegisterCtr" class="Controller.Register.RegisterController" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    The Contect controller.
+    -->
+    <bean name="ContectCtr" class="Controller.Contect.ContectController" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    The AboutUs controller.
+    -->
+    <bean name="AboutUsOutCtr" class="Controller.AboutUs.AboutUsController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    The Logout controller.
+    -->
+    <bean name="LogoutCtr"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="Logout" />
+
+<!-- ******************************************************************************************************************* -->
+
+    <!--
+    For the Admin Dashboard module
+    -->
+    <bean name="Admin_DashboardCtr" class="Controller.A_Dashboard.A_DashboardController" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Admin Dashboard module
+    -->
+    <bean name="StructureCtr" class="Controller.Structure.StructureController" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Contact Us Request module
+    -->
+    <bean name="RequestCtr" class="Controller.Request.RequestController" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+    
+    <!--
+    The New Blog controller.
+    -->
+
+    <bean name="BlogCtr" class="Controller.Blog.BlogController">
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Admin Block module
+    -->
+    <bean name="BlockCtr" class="Controller.Block.BlockController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Help Responce module
+    -->
+    <bean name="Help_ResponseCtr" class="Controller.Help_Response.Help_ResController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Admin All Comany module
+    -->
+    <bean name="All_Company_InfoCtr" class="Controller.All_Company.All_CompanyController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--For the Send Mail Management module by Admin -->
+    <bean name="Send_MailCtr" class="Controller.Send_Mail.Send_MailContorller">
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+<!-- ******************************************************************************************************************* -->
+
+    <!--
+    For the Ajex
+    -->
+    <bean name="AjexCtr" class="Ajex.AjexCtr" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+    
+    <!--
+    For the Ajex
+    -->
+    <bean name="All_MsgCtr" class="Ajex.All_MsgCtr" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+<!-- ******************************************************************************************************************* -->
+
+    <!--
+    For the Dashboard module
+    -->
+    <bean name="DashboardCtr" class="Controller.Dashboard.DashboardController" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Account Management module
+    -->
+    <bean name="AccountCtr" class="Controller.Ac_management.AcController">
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Item Management module
+    -->
+    <bean name="ItemCtr" class="Controller.Item_management.ItemController">
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Trade Management module
+    -->
+    <bean name="TradeCtr" class="Controller.Trade_management.TradeController" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Roports module
+    -->
+    <bean name="ReportCtr" class="Controller.Report.ReportController" >
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the bank Management module
+    -->
+    <bean name="BankCtr" class="Controller.Bank.BankController">
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Cash Management module
+    -->
+    <bean name="CashCtr" class="Controller.Cash.CashController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the S-JvEntry Management module
+    -->
+    <bean name="S_JvEntryCtr" class="Controller.S_JvEntry.S_JvEntryContoller">
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Currency Management module
+    -->
+    <bean name="CurrencyCtr" class="Controller.Currency.CurrencyController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the user Management module
+    -->
+    <bean name="UserCtr" class="Controller.User.UserContoller" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Trash Management module
+    -->
+    <bean name="TrashCtr" class="Controller.Trash.TrashContoller" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the User detail Management module
+    -->
+    <bean name="User_DetailCtr" class="Controller.User_Detail.UserDetailController">
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the company detail Management module
+    -->
+    <bean name="Company_DetailCtr" class="Controller.Company_Detail.Com_DetailController">
+        <property name="MethodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Setting Management module
+    -->
+    <bean name="SettingCtr" class="Controller.Setting.SettingController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+    For the Help Management module
+    -->
+    <bean name="HelpCtr" class="Controller.Help.HelpController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+     <!--
+    For the Chang Password module
+    -->
+    <bean name="Chang_PasswordCtr" class="Controller.Chang_Password.Chang_PasswordController" >
+        <property name="methodNameResolver">
+            <ref bean="paramResolver"></ref>
+        </property>
+    </bean>
+
+</beans>

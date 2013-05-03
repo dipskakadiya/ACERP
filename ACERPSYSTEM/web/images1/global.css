@@ -1,0 +1,194 @@
+.leftquote {
+background-color: #fff;
+font-size: 24px;
+color: #000;
+font-style: italic;
+line-height: 150%;
+margin: 10px 25px 10px 0;
+padding: 5px 5px 5px 15px;
+width: 275px; 
+float: left;
+border: 1px solid #666666; 
+-moz-border-radius: 10px 10px 10px 10px; 
+-moz-box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+-webkit-border-radius: 10px 10px 10px 10px; 
+-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+border-radius: 10px 10px 10px 10px; 
+box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color=#25000000, Positive='true');
+}
+
+.rightquote {
+background-color: #fff;
+font-size: 24px;
+color: #000;
+font-style: italic;
+line-height: 150%;
+margin: 10px 0pt 10px 25px;
+padding: 5px 5px 5px 15px;
+width: 275px; 
+float: right;
+border: 1px solid #666666; 
+-moz-border-radius: 10px 10px 10px 10px; 
+-moz-box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+-webkit-border-radius: 10px 10px 10px 10px; 
+-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+border-radius: 10px 10px 10px 10px; 
+box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color=#25000000, Positive='true');
+}
+
+.hubsection {
+height: 80px; 
+padding: 30px 0pt 20px; 
+border-bottom: 1px solid #888888;
+}
+
+.thumbborder {
+	background: #fff;
+	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+	-moz-box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+	box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+	border:1px solid #999;
+	padding:5px;
+}
+.hubtab { 
+    float:left;
+    width: auto;
+    min-width: 30px;
+    text-decoration: none;
+    padding: .2em 1em .15em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-top-right-radius: .8em;
+    -webkit-border-top-left-radius: .8em;
+    -moz-border-radius-topright: .8em;
+    -moz-border-radius-topleft: .8em;
+    border-top-right-radius: .8em;
+    border-top-left-radius: .8em;
+    -webkit-box-shadow: 0.1em -0.1em 0.2em rgba(0,0,0,.3);
+    -moz-box-shadow: 0.1em -0.1em 0.2em rgba(0,0,0,.3);
+    box-shadow: 0.1em -0.1em 0.2em rgba(0,0,0,.3);
+}
+
+/* New hubtab IE fix code for Global CSS */
+html > body .hubtab {
+    min-width:30px;
+    width:auto;
+}
+/* New headerline code for Global CSS */
+.headerline {
+    -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,.3);
+    -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,.3);
+    clear:both;
+    border:0 none;
+    height:2px;
+    _line-height:2px;
+    _font-size:0px;
+    margin:0 0 10px 0;
+    width:100%
+}
+/* New value to be added to Global.css */
+.roundcorner {
+    -webkit-border-radius: .8em;
+    -moz-border-radius: .8em;
+}
+
+.clearfloat { 
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+.thumbpad {
+	display:block;
+	float:left;
+	width:78px;
+	height:78px;
+	margin-right:20px; 
+}
+.float-left {
+	float:left;
+}
+.float-right {
+	float:right;
+}
+.floatRight {
+	float:right;
+}
+.floatLeft {
+	float:left;
+}
+.small {
+	font-size:.8em;
+}
+input, textarea {
+	font:1em Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.Full {
+	width:96%;
+	margin:0 2%;
+}
+.oneHalf {
+	width:48%;
+	margin:0 1%;
+}
+.oneThird {
+	width:31.333%;
+	margin:0 1%;
+}
+.twoThird {
+	width:62.666%;
+	margin:0 2%;
+}
+.oneFourth {
+	width:23%;
+	margin:0 1%;
+}
+.threeFourth {
+	width:71%;
+	margin:0 2%;
+}
+.oneFifth {
+	width:18%;
+	margin:0 1%;
+}
+.twoFifth {
+	width:38%;
+	margin:0 1%;
+}
+.threeFifth {
+	width:56%;
+	margin:0 2%;
+}
+.fourFifth {
+	width:76%;
+	margin:0 2%;
+}
+.oneSixth {
+	width:14.666%;
+	margin:0 1%;
+}
+.fiveSixth {
+	width:79.333%;
+	margin:0 2%;
+}
+.oneEighth {
+	width:10.5%;
+	margin:0 1%;
+}
+.threeEighth {
+	width:35.5%;
+	margin:0 1%;
+}
+.fiveEighth {
+	width:58.5%;
+	margin:0 2%;
+}
+.sevenEighth {
+	width:83.5%;
+	margin:0 2%;
+}

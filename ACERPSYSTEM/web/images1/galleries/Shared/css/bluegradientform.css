@@ -1,0 +1,123 @@
+#loginform {
+	float: right;
+	padding: 0;
+	margin: 0 0 20px 20px;
+	background: #fff url(../common/blueformgradient.jpg) 0% 100% repeat-x;
+	font: 10px Trebuchet MS, helvetica, sans-serif;
+	width: 200px;
+	border: #A6C4DE 1px solid;
+	color: #000000;
+}
+#loginform fieldset {
+	border: 0;
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+#loginform legend {
+	display: block;
+	background: url(../common/smalllockicon.gif) 4px 8px no-repeat;
+	padding: 8px 0 8px 24px;
+	margin: 0;
+	font-weight: bold;
+	font: bold 10pt "Trebuchet MS", Arial, Verdana, sans-serif bold;
+}
+#loginform input.box {
+	vertical-align: center;
+	width: 110px;
+	font: bold 10px Arial, Verdana, sans-serif bold;  
+}
+#loginform label {
+  	display: inline-block;
+	vertical-align: center;
+	width: 55px;
+}
+#loginform fieldset ol {
+  	margin: 0;
+	padding: 0 5px;
+}
+#loginform fieldset li {
+  	list-style: none;
+ 	margin: 0;
+	padding: 7px 6px 6px 6px;
+	border-bottom: 1px solid #fff; 
+}
+#loginform .bottom {
+	padding: 5px 0 0 0;
+	margin: 0;
+	border: 0;
+}
+#loginform .btn {
+	font: 8pt Arial, helvetica, sans-serif;
+  	font-weight:bold;
+  	list-style: none;
+ 	padding: 0 5px;
+	margin: 0 0 0 0;
+}
+#loginform em {
+  	font-weight: bold;
+  	font-style: normal;
+  	color: #f00;
+}
+
+#feedbackform form {
+ 	border: 0;
+	margin: 0;
+}
+#feedbackform {
+	margin: 0;
+	padding: 0;
+	font: 11px Trebuchet MS, helvetica, sans-serif;
+	width: 350px;
+}
+#feedbackform fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+#feedbackform legend {
+	background: url(http://samples.cpasitesolutions.com/404.php) 1 8 no-repeat;
+	padding: 8px 0 2px 24px;
+	font-weight: bold;
+	border-bottom: 1px solid #fff;
+	margin: 0;
+	font: bold 10pt Arial, Verdana, sans-serif bold;
+}
+#feedbackform label {
+  	display: inline-block;
+	vertical-align: center;
+	width: 150px;
+}
+#feedbackform fieldset ol {
+  	margin: 0;
+	padding: 5px 5px 0 5px;
+	border: 0;
+}
+#feedbackform fieldset li {
+  	list-style: none;
+ 	margin: 0;
+	padding: 7px 6px 6px 6px;
+	border-bottom: 1px solid #ccc; 
+}
+#feedbackform .bottom {
+  	list-style: none;
+ 	margin: 0;
+	padding: 7px 6px 0 6px;
+	border: 0;
+}
+#feedbackform input.box {
+	vertical-align: top;
+	width: 170px;
+	font: bold 10px Arial, Verdana, sans-serif bold;  
+}
+#feedbackform .btn {
+	font: 10pt Trebuchet MS, helvetica, sans-serif;
+  	font-weight:bold;
+  	list-style: none;
+ 	padding: 0 5px;
+	margin: 0 0 5px 0;
+}
+#feedbackform em {
+  	font-weight: bold;
+  	font-style: normal;
+  	color: #f00;
+}
