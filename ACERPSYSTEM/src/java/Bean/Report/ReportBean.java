@@ -16,6 +16,7 @@ public class ReportBean {
     private String[] cri;
     private String[] val;
     private Integer[] field;
+    //hi
     
     public Integer getAccount_No() {
         return Account_No;
