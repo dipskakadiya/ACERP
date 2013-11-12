@@ -61,7 +61,7 @@ public class AdminService {
     }
 
     public void sendsms(Object phone, String msg) throws Exception {
-        URL url = new URL("http://www.ubaid.tk/sms/sms.aspx?uid=8460838411&pwd=dips1992&msg=" + msg + "&phone=" + phone + "&provider=way2sms");
+        URL url = new URL("http://www.ubaid.tk/sms/sms.aspx?uid=<userid>&pwd=<PWD>&msg=" + msg + "&phone=" + phone + "&provider=way2sms");
 
         URLConnection conn = url.openConnection();
         conn.connect();
